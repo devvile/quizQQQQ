@@ -1,12 +1,12 @@
-import { useState } from 'react'
 import './App.css'
+import { AppContent } from './AppContent'
+import {AuthProvider} from './assets/contexts/AuthContext'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    </>
+    <AuthProvider>
+      <AppContent/>
+    </AuthProvider>
   )
 }
 
