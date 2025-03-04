@@ -72,7 +72,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
     async function logOut() {
       return signOut(auth)
         .then(() => {
-          console.log('User logged out');
         })
         .catch((error) => {
           console.error('Error logging out:', error.message);

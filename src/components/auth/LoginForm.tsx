@@ -71,7 +71,7 @@ const Login: React.FC = () => {
         <div className="flex items-center justify-between">
           <div className="text-sm">
             <Link
-              to="/forgot-password"
+              to="/forgot_password"
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
               Forgot your password?
@@ -81,7 +81,7 @@ const Login: React.FC = () => {
 
         <AuthButton
           type="submit"
-          variant="primary"
+          variant="secondary"
           disabled={loading}
           fullWidth
         >

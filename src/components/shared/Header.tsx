@@ -1,9 +1,10 @@
 import { useAuth } from "../../contexts/AuthContext"
+import AuthButton from "../auth/ui/AuthButton";
 
 export default function Header(){
-    const {isAuthenticated,logout} = useAuth();
+    const {currentUser,logOut} = useAuth();
     const handleLogout = ()=>{
-        logout();
+        logOut();
     }
 
     return (
@@ -14,13 +15,12 @@ export default function Header(){
             <h1 className="font-bold text-blue-600">Quiz App</h1>
             </div>
             <div className="flex items-center">
-                {isAuthenticated &&
-                <button
-                className="bg-red-500 text-stone-500 py-1 px-3 rounded-md hover:bg-red-600 text-sm"
-                onClick={handleLogout}
-                >
-                Logout
-                </button>}
+                {currentUser &&
+                <AuthButton
+                    variant="secondary"
+                    label="Log out"
+                    onClick={handleLogout}
+                >Sign out</AuthButton>}
             </div>
         </div>
         </div>

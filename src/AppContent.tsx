@@ -6,7 +6,7 @@ import Categories from './pages/Categories'
 
 import { useAuth } from './contexts/AuthContext'
 import SignUpPage from './pages/SignUp'
-
+import ForgotPasswordPage from './pages/ForgotPasswordPage'
 export const AppContent = ()=> {
 
 const {isAuthenticated} = useAuth();
@@ -18,6 +18,7 @@ const {isAuthenticated} = useAuth();
                 <Routes>
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/signup" element={<SignUpPage/>}/>
+                    <Route path="/forgot_password" element={<ForgotPasswordPage/>}/>
                     <Route path="*" element={<Navigate to="/login" replace />} />
                 </Routes>
             </Layout>

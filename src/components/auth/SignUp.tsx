@@ -96,7 +96,7 @@ const SignUp: React.FC = () => {
 
         <AuthButton
           type="submit"
-          variant="primary"
+          variant="secondary"
           disabled={loading}
           fullWidth
         >

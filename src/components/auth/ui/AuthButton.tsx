@@ -22,7 +22,7 @@ const AuthButton: React.FC<ButtonProps> = ({
   const baseStyles = "flex justify-center py-2 px-4 border rounded-md shadow-sm text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50";
   
   const variantStyles = {
-    primary: "border-transparent text-stone-600 bg-indigo-600 hover:bg-indigo-700",
+    primary: "border-transparent text-stone-100 bg-indigo-600 hover:bg-indigo-700",
     secondary: "border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
   };
 
