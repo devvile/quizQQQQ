@@ -15,35 +15,37 @@ interface InputFieldProps {
   placeholder?: string;
 }
 
-const InputField: React.FC<InputFieldProps> = ({ 
-  id, 
-  label, 
-  type, 
-  value, 
-  onChange, 
+const InputField: React.FC<InputFieldProps> = ({
+  id,
+  label,
+  type,
+  value,
+  onChange,
   required = false,
   feedback = false,
   className = '',
-  placeholder = ''
+  placeholder = '',
 }) => {
   return (
     <div className="field mb-4">
       <label htmlFor={id} className="block text-sm font-medium mb-2">
         {label}
       </label>
-      
+
       {type === 'password' ? (
-        <Password
-          id={id}
-          value={value}
-          onChange={onChange}
-          toggleMask
-          feedback={feedback}
-          required={required}
-          className={classNames('w-full', className)}
-          inputClassName="w-full"
-          placeholder={placeholder}
-        />
+        <div className="w-full p-input-wrapper">
+          <Password
+            id={id}
+            value={value}
+            onChange={onChange}
+            toggleMask
+            feedback={feedback}
+            required={required}
+            className={classNames('w-full', className)}
+            inputClassName="w-full"
+            placeholder={placeholder}
+          />
+        </div>
       ) : (
         <InputText
           id={id}
