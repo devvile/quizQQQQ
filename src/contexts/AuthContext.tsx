@@ -34,7 +34,7 @@ export function useAuth() {
   }
 
 interface AuthProviderProps {
-    children: ReactNode;
+    children: React.ReactNode;
 }
 
 
