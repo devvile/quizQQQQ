@@ -8,12 +8,12 @@ interface LayoutProps{
 
 export default function Layout({children}:LayoutProps){
     return (
-        <div className="min-h-screen flex flex-col bg-gray-100">
+        <div className="min-h-screen flex flex-col bg-gray-100 min-w-screen">
           {/* Header */}
             <Header/>
           {/* Main content */}
-          <main className="flex-grow">
-            <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+          <main className="flex-grow h-[var(--content-height)]">
+            <div className="mx-auto">
               {children}
             </div>
           </main>
