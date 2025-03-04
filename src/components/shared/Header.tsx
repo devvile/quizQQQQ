@@ -1,4 +1,4 @@
-import { useAuth } from "../../assets/contexts/AuthContext"
+import { useAuth } from "../../contexts/AuthContext"
 
 export default function Header(){
     const {isAuthenticated,logout} = useAuth();
@@ -22,7 +22,6 @@ export default function Header(){
                 Logout
                 </button>}
             </div>
-
         </div>
         </div>
     </header>

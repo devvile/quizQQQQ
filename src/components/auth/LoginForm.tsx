@@ -1,4 +1,4 @@
-import { useAuth } from "../../assets/contexts/AuthContext"
+import { useAuth } from "../../contexts/AuthContext"
 import { User } from "../../types";
 import { useNavigate } from "react-router-dom";
 import {Card} from "primereact/card"

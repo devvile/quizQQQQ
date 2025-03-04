@@ -1,10 +1,10 @@
 import Layout from './components/shared/Layout'
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
-import LoginPage from './assets/pages/LoginPage'
-import HomePage from './assets/pages/HomePage'
-import Categories from './assets/pages/Categories'
+import LoginPage from './pages/LoginPage'
+import HomePage from './pages/HomePage'
+import Categories from './pages/Categories'
 
-import { useAuth } from './assets/contexts/AuthContext'
+import { useAuth } from './contexts/AuthContext'
 
 export const AppContent = ()=> {
 

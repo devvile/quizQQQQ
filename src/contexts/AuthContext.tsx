@@ -1,6 +1,16 @@
 import React from "react";
 import { createContext,useContext, useReducer} from "react";
-import { User } from "../../types";
+//import { User } from "../types";
+import { auth } from '../firebase/config';
+import { User, 
+    createUserWithEmailAndPassword, 
+    signInWithEmailAndPassword, 
+    signOut, 
+    onAuthStateChanged,
+    GoogleAuthProvider,
+    signInWithPopup,
+    sendPasswordResetEmail
+  } from 'firebase/auth';
 
 interface AuthContextType {
     isAuthenticated:boolean;
