@@ -9,9 +9,9 @@ import SignUpPage from './pages/SignUp'
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
 export const AppContent = ()=> {
 
-const {isAuthenticated} = useAuth();
+const {currentUser} = useAuth();
     
-      if(!isAuthenticated){
+      if(!currentUser){
         return (
             <BrowserRouter>
             <Layout>
