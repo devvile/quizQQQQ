@@ -6,13 +6,13 @@ import AuthButton from './ui/AuthButton';
 import InputField from './ui/InputField';
 import AuthCard from './ui/AuthCard';
 import GoogleSignInButton from './ui/GoogleSignInButton';
+import { useToast } from '../../contexts/ToastContext';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-
+  const { showToast } = useToast();
   const { logIn, googleSignIn } = useAuth();
   const navigate = useNavigate();
 
@@ -20,12 +20,12 @@ const Login: React.FC = () => {
     e.preventDefault();
 
     try {
-      setError('');
       setLoading(true);
       await logIn(email, password);
       navigate('/');
-    } catch (err: any) {
-      setError(err.message || 'Failed to log in');
+    } catch (err: unknown) {
+      showToast('error', 'Error', 'Failed to create an account'); 
+      console.error(err);
     } finally {
       setLoading(false);
     }
@@ -33,25 +33,19 @@ const Login: React.FC = () => {
 
   async function handleGoogleSignIn() {
     try {
-      setError('');
       setLoading(true);
       await googleSignIn();
       navigate('/');
-    } catch (err: any) {
-      setError(err.message || 'Failed to sign in with Google');
+    } catch (err: unknown) {
+      showToast('error', 'Error', 'Failed to sign in with Google'); 
+      console.error(err);
     } finally {
       setLoading(false);
     }
   }
 
   return (
-    <AuthCard title = {"Log in"}>
-      {error && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-          {error}
-        </div>
-      )}
-
+    <AuthCard title={'Log in'}>
       <form onSubmit={handleSubmit} className="space-y-4">
         <InputField
           id="email"
