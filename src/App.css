@@ -42,3 +42,13 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.p-password {
+  width: 100%;
+  display: block;
+}
+
+.p-password-input {
+  width: 100%;
+}
