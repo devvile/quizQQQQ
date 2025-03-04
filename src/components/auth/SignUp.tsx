@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import AuthCard from './ui/AuthCard';
 
 const SignUp: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -45,8 +46,7 @@ const SignUp: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
+    <AuthCard>
         <h2 className="text-2xl font-bold text-center mb-6">Create an Account</h2>
         
         {error && <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">{error}</div>}
@@ -130,8 +130,7 @@ const SignUp: React.FC = () => {
             Log In
           </Link>
         </p>
-      </div>
-    </div>
+        </AuthCard>
   );
 };
 

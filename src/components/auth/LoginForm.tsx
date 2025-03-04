@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Divider from './ui/Divider';
 import AuthButton from './ui/AuthButton';
 import InputField from './ui/InputField';
-import { Card } from 'primereact/card';
+import AuthCard from './ui/AuthCard';
 import GoogleSignInButton from './ui/GoogleSignInButton';
 
 const Login: React.FC = () => {
@@ -45,7 +45,7 @@ const Login: React.FC = () => {
   }
 
   return (
-    <Card>
+    <AuthCard>
       <h2 className="text-2xl font-bold text-center mb-6">Log In</h2>
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -110,7 +110,7 @@ const Login: React.FC = () => {
           Sign Up
         </Link>
       </p>
-    </Card>
+    </AuthCard>
   );
 };
 
